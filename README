@@ -1,0 +1,22 @@
+backs up schema, tables, and assets in a db agnositc fashion.  each backup
+makes a Rails.env/iso8601 directory full of yaml files for data and plain
+files for assest.
+
+
+  rake backup:dump:all       #=> ls ./backup/production/20101012131827280000/
+
+  or
+
+    rake backup:dump:schema
+    rake backup:dump:tables
+    rake backup:dump:assets
+
+
+
+  rake backup:load:all BACKUP=./backup/production/20101012131827280000/
+
+  or
+
+    rake backup:load:schema BACKUP=./backup/production/20101012131827280000/
+    rake backup:load:tables BACKUP=./backup/production/20101012131827280000/
+    rake backup:load:tables BACKUP=./backup/production/20101012131827280000/
