@@ -115,7 +115,7 @@ namespace('backup') do
     BACKUP_TIMESTAMP = Time.now.iso8601(2).gsub(%r/[^\d]/,'')
 
     def backup_assets
-      @backup_assets ||= Array(ENV['BACKUP_ASSETS'] || ENV['ASSETS'] || %w( private )).join(',').strip.split(%r/\s*,\s*/)
+      @backup_assets ||= Array(ENV['BACKUP_ASSETS'] || ENV['ASSETS'] || %w( private public/system )).join(',').strip.split(%r/\s*,\s*/)
     end
 
     def backup_name
